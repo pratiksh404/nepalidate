@@ -2,9 +2,7 @@
 
 ![Laravel Nepali Date Converter](https://github.com/pratiksh404/nepalidate/blob/main/screenshots/banner.png)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/pratiksh/nepalidate.svg?style=flat-square)](https://packagist.org/packages/pratiksh/nepalidate)
-
-[![Stars](https://img.shields.io/github/stars/pratiksh404/nepalidate)](https://github.com/pratiksh404/nepalidate/stargazers) [![Downloads](https://img.shields.io/packagist/dt/pratiksh/nepalidate.svg?style=flat-square)](https://packagist.org/packages/pratiksh/nepalidate) [![StyleCI](https://github.styleci.io/repos/372560942/shield?branch=main)](https://github.styleci.io/repos/372560942?branch=main) [![Build Status](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/badges/build.png?b=main)](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/build-status/main) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/?branch=main) [![CodeFactor](https://www.codefactor.io/repository/github/pratiksh404/nepalidate/badge)](https://www.codefactor.io/repository/github/pratiksh404/nepalidate) [![License](https://img.shields.io/github/license/pratiksh404/nepalidate)](//packagist.org/packages/pratiksh/adminetic)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/pratiksh/nepalidate.svg?style=flat-square)](https://packagist.org/packages/pratiksh/nepalidate)[![Stars](https://img.shields.io/github/stars/pratiksh404/nepalidate)](https://github.com/pratiksh404/nepalidate/stargazers) [![Downloads](https://img.shields.io/packagist/dt/pratiksh/nepalidate.svg?style=flat-square)](https://packagist.org/packages/pratiksh/nepalidate) [![StyleCI](https://github.styleci.io/repos/372560942/shield?branch=main)](https://github.styleci.io/repos/372560942?branch=main) [![Build Status](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/badges/build.png?b=main)](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/build-status/main) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/pratiksh404/nepalidate/?branch=main) [![CodeFactor](https://www.codefactor.io/repository/github/pratiksh404/nepalidate/badge)](https://www.codefactor.io/repository/github/pratiksh404/nepalidate) [![License](https://img.shields.io/github/license/pratiksh404/nepalidate)](//packagist.org/packages/pratiksh/adminetic)
 
 Laravel package to convert AD to BS that can work with carbon.
 
@@ -54,7 +52,3 @@ If you discover any security related issues, please email pratikdai404@gmail.com
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
