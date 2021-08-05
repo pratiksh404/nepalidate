@@ -8,6 +8,6 @@ class NepaliDate extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'nepali_date';
+        return 'nepalidate';
     }
 }

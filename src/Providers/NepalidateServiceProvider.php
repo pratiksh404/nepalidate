@@ -13,7 +13,7 @@ class NepalidateServiceProvider extends ServiceProvider
     public function register()
     {
         // Register the main class to use with the facade
-        $this->app->singleton('nepali_date', function () {
+        $this->app->singleton('nepalidate', function () {
             return new NepaliDate;
         });
     }
