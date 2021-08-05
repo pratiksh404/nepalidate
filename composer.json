@@ -1,6 +1,6 @@
 {
     "name": "pratiksh/nepalidate",
-    "description": "Laravel package to convert AD to BS that can work with carbon ",
+    "description": "Laravel package to convert AD to BS that can work with carbon.",
     "keywords": [
         "pratiksh",
         "nepalidate"
