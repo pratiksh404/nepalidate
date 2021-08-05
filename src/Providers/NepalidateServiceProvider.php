@@ -7,7 +7,6 @@ use Pratiksh\Nepalidate\Services\NepaliDate;
 
 class NepalidateServiceProvider extends ServiceProvider
 {
-
     /**
      * Register the application services.
      */
