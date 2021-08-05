@@ -26,7 +26,10 @@
     "autoload": {
         "psr-4": {
             "Pratiksh\\Nepalidate\\": "src"
-        }
+        },
+         "files": [
+          "src/Helpers/NepaliDateHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

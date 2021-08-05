@@ -14,15 +14,26 @@ You can install the package via composer:
 composer require pratiksh/nepalidate
 ```
 
-## Usage
+## Usages
+
+By Using Facade.
 
 ```php
 use Pratiksh\Nepalidate\Facades\NepaliDate;
 
-.....
 NepaliDate::create(\Carbon\Carbon::now())->toBS(); // 2078-4-21
 NepaliDate::create(\Carbon\Carbon::now())->toFormattedBSDate(); // 21 Shrawan 2078, Thurday
 NepaliDate::create(\Carbon\Carbon::now())->toFormattedNepaliDate(); // २१ साउन २०७८, बिहिवार
+```
+
+By Using Helper Function.
+
+```php
+use Pratiksh\Nepalidate\Facades\NepaliDate;
+
+toBS(\Carbon\Carbon::now()); // 2078-4-21
+toFormattedBSDate(\Carbon\Carbon::now()); // 21 Shrawan 2078, Thurday
+toFormattedNepaliDate(\Carbon\Carbon::now()); // २१ साउन २०७८, बिहिवार
 ```
 
 ### Testing
