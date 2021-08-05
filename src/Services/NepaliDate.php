@@ -177,7 +177,6 @@ class NepaliDate
     public $dayOfWeek = 6; // 7 - 1, 0 for sunday, 6 for saturday
     /*These are initial values for nepali date.*/
 
-
     public function create(Carbon $date)
     {
         $this->year = $date->year;
@@ -191,24 +190,24 @@ class NepaliDate
 
     public function toBS()
     {
-        return $this->nepaliYear . '-' . $this->nepaliMonth . '-' . $this->nepaliDay;
+        return $this->nepaliYear.'-'.$this->nepaliMonth.'-'.$this->nepaliDay;
     }
 
     public function toFormattedBSDate()
     {
-        return $this->nepaliDay . ' ' .
-            $this->formattedBSMonth($this->nepaliMonth) . ' ' .
-            $this->nepaliYear . ',' .
-            ' ' .
+        return $this->nepaliDay.' '.
+            $this->formattedBSMonth($this->nepaliMonth).' '.
+            $this->nepaliYear.','.
+            ' '.
             $this->formattedBSDateOfWeek($this->dayOfWeek);
     }
 
     public function toFormattedNepaliDate()
     {
-        return $this->formattedNepaliNumber($this->nepaliDay) . ' ' .
-            $this->formattedNepaliMonth($this->nepaliMonth) . ' ' .
-            $this->formattedNepaliNumber($this->nepaliYear) . ',' .
-            ' ' .
+        return $this->formattedNepaliNumber($this->nepaliDay).' '.
+            $this->formattedNepaliMonth($this->nepaliMonth).' '.
+            $this->formattedNepaliNumber($this->nepaliYear).','.
+            ' '.
             $this->formattedNepaliDateOfWeek($this->dayOfWeek);
     }
 
@@ -266,7 +265,6 @@ class NepaliDate
                 }
             }
         }
-
 
         for ($i = 0; $i < ($month - 1); $i++) {
             if ($this->isLeapYear($year)) {
