@@ -36,6 +36,41 @@ toFormattedBSDate(\Carbon\Carbon::now()); // 21 Shrawan 2078, Thurday
 toFormattedNepaliDate(\Carbon\Carbon::now()); // २१ साउन २०७८, बिहिवार
 ```
 
+Mode Controlled Nepali Date Helper
+
+for this to work publish config file
+
+```php
+php artisan vendor:publish --provider="Pratiksh\Nepalidate\Providers\NepalidateServiceProvider"
+```
+
+then in config
+
+```php
+<?php
+
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Nepali Date Return Mode
+    |--------------------------------------------------------------------------
+    | 1 = toBS
+    | 2 = toFormattedBSDate
+    | 3 = toFormattedBSDate
+    |
+    */
+    'mode' => 1
+];
+```
+
+```php
+// OUTPUT
+// if mode = 1 then output 2078-4-21
+// if mode = 2 then output 21 Shrawan 2078, Thurday
+// if mode = 3 then output २१ साउन २०७८, बिहिवार
+nepalidate(\Carbon\Carbon::now());
+```
+
 ### Testing
 
 ```bash
