@@ -16,6 +16,7 @@ class nepaliDateCheckTest extends TestCase
         $toBSDate = $nepalidate->create($date)->toBS();
         $this->assertEquals('2078-4-21', $toBSDate);
     }
+
     /** @test */
     public function check_toFormattedBSDate()
     {
@@ -24,6 +25,7 @@ class nepaliDateCheckTest extends TestCase
         $toBSDate = $nepalidate->create($date)->toFormattedBSDate();
         $this->assertEquals('21 Shrawan 2078, Thurday', $toBSDate);
     }
+
     /** @test */
     public function check_toFormattedNepaliDate()
     {
