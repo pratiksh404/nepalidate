@@ -8,7 +8,7 @@ return [
     | 1 = toBS
     | 2 = toFormattedBSDate
     | 3 = toFormattedBSDate
-    | 
+    |
     */
-    'mode' => 1
+    'mode' => 1,
 ];

@@ -8,17 +8,15 @@ use Pratiksh\Nepalidate\Services\NepaliDate;
 class NepalidateServiceProvider extends ServiceProvider
 {
     /**
-     *
-     * Bootstrap Resources
+     * Bootstrap Resources.
      *
      *@return void
-     *
      */
     public function boot()
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../../config/nepalidate.php' => config_path('nepalidate.php'),
+                __DIR__.'/../../config/nepalidate.php' => config_path('nepalidate.php'),
             ], 'nepalidate-config');
         }
     }
