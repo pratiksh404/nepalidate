@@ -1,9 +1,9 @@
 <?php
 
 use Carbon\Carbon;
-use Pratiksh\Nepalidate\Facades\NepaliDate;
+use Pratiksh\Nepalidate\Services\NepaliDate;
 
-if (! function_exists('nepaliDate')) {
+if (!function_exists('nepaliDate')) {
     function nepaliDate(Carbon $date)
     {
         $mode = config('nepalidate.mode', 1);
@@ -19,23 +19,23 @@ if (! function_exists('nepaliDate')) {
     }
 }
 
-if (! function_exists('toBS')) {
+if (!function_exists('toBS')) {
     function toBS(Carbon $date)
     {
-        return NepaliDate::create($date)->toBS();
+        return (new NepaliDate())->create($date)->toBS();
     }
 }
 
-if (! function_exists('toFormattedBSDate')) {
+if (!function_exists('toFormattedBSDate')) {
     function toFormattedBSDate(Carbon $date)
     {
-        return NepaliDate::create($date)->toFormattedBSDate();
+        return (new NepaliDate())->create($date)->toFormattedBSDate();
     }
 }
 
-if (! function_exists('toFormattedNepaliDate')) {
+if (!function_exists('toFormattedNepaliDate')) {
     function toFormattedNepaliDate(Carbon $date)
     {
-        return NepaliDate::create($date)->toFormattedNepaliDate();
+        return (new NepaliDate())->create($date)->toFormattedNepaliDate();
     }
 }
