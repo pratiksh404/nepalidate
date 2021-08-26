@@ -12,7 +12,7 @@ class NepaliDate extends Facade
     }
 
     /**
-     * Resolve a new instance for the facade
+     * Resolve a new instance for the facade.
      *
      * @return mixed
      */
