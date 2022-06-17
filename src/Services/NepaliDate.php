@@ -190,24 +190,24 @@ class NepaliDate
 
     public function toBS()
     {
-        return $this->nepaliYear . '-' . sprintf('%02d', $this->nepaliMonth) . '-' . sprintf('%02d', $this->nepaliDay);
+        return $this->nepaliYear.'-'.sprintf('%02d', $this->nepaliMonth).'-'.sprintf('%02d', $this->nepaliDay);
     }
 
     public function toFormattedBSDate()
     {
-        return $this->nepaliDay . ' ' .
-            $this->formattedBSMonth($this->nepaliMonth) . ' ' .
-            $this->nepaliYear . ',' .
-            ' ' .
+        return $this->nepaliDay.' '.
+            $this->formattedBSMonth($this->nepaliMonth).' '.
+            $this->nepaliYear.','.
+            ' '.
             $this->formattedBSDateOfWeek($this->dayOfWeek);
     }
 
     public function toFormattedNepaliDate()
     {
-        return $this->formattedNepaliNumber($this->nepaliDay) . ' ' .
-            $this->formattedNepaliMonth($this->nepaliMonth) . ' ' .
-            $this->formattedNepaliNumber($this->nepaliYear) . ',' .
-            ' ' .
+        return $this->formattedNepaliNumber($this->nepaliDay).' '.
+            $this->formattedNepaliMonth($this->nepaliMonth).' '.
+            $this->formattedNepaliNumber($this->nepaliYear).','.
+            ' '.
             $this->formattedNepaliDateOfWeek($this->dayOfWeek);
     }
 
@@ -225,7 +225,7 @@ class NepaliDate
     {
         $bs_array = $this->toBSArray();
         $to_detail_bs = null;
-        if (!is_null($bs_array)) {
+        if (! is_null($bs_array)) {
             if (is_array($bs_array)) {
                 if (count($bs_array) > 0) {
                     $to_detail_bs = json_decode(json_encode($bs_array));
