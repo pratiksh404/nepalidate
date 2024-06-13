@@ -10,7 +10,7 @@ class NepalidateServiceProvider extends ServiceProvider
     /**
      * Bootstrap Resources.
      *
-     *@return void
+     * @return void
      */
     public function boot()
     {
