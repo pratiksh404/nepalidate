@@ -112,7 +112,7 @@ class NepaliDate
         5 => 'Bhadra',
         6 => 'Ashoj',
         7 => 'Kartik',
-        8 => 'Manghir',
+        8 => 'Mangsir',
         9 => 'Poush',
         10 => 'Magh',
         11 => 'Falgun',
