@@ -14,11 +14,7 @@ class NepalidateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../../config/nepalidate.php' => config_path('nepalidate.php'),
-            ], 'nepalidate-config');
-        }
+        $this->loadHelpers();
     }
 
     /**
@@ -26,9 +22,13 @@ class NepalidateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Register the main class to use with the facade
-        $this->app->singleton('nepalidate', function () {
-            return new NepaliDate;
-        });
+        //
+    }
+
+    protected function loadHelpers()
+    {
+        foreach (glob(__DIR__ . '/../Helpers/helpers.php') as $filename) {
+            require_once $filename;
+        }
     }
 }

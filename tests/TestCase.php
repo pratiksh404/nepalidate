@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Pratiksh\Nepalidate\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Pratiksh\Nepalidate\Providers\NepalidateServiceProvider;

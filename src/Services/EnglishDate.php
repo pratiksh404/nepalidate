@@ -69,7 +69,7 @@ class EnglishDate extends DateConverter
         // CORRECTED: Adjusted the reference date to fix the one-day offset
         $initial_english_year = 1943;
         $initial_english_month = 4;
-        $initial_english_day = 14;  // Changed from 14 to 13
+        $initial_english_day = 13;  // Changed from 14 to 13
         $dayOfWeek = $this->dayOfWeek;
 
         // Set initial values
@@ -113,5 +113,10 @@ class EnglishDate extends DateConverter
             $total_bs_days--;
         }
         $this->date = Carbon::create($this->year, $this->month, $this->day);
+    }
+
+    public function toAD($format = 'Y-m-d'): string
+    {
+        return $this->date->format($format);
     }
 }

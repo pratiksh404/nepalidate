@@ -16,65 +16,57 @@ composer require pratiksh/nepalidate
 
 ## Usages
 
-By Using Facade.
+By Using Converter Classes.
+
+### AD to BS
 
 ```php
-use Pratiksh\Nepalidate\Facades\NepaliDate;
+use Pratiksh\Nepalidate\Services\NepaliDate;
 
-NepaliDate::create(\Carbon\Carbon::now())->toBS(); // 2078-4-21
-NepaliDate::create(\Carbon\Carbon::now())->toFormattedBSDate(); // 21 Shrawan 2078, Thurday
-NepaliDate::create(\Carbon\Carbon::now())->toFormattedNepaliDate(); // २१ साउन २०७८, बिहिवार
+NepaliDate::create(\Carbon\Carbon::now())->toBS(); // 2082-02-04
+NepaliDate::create(\Carbon\Carbon::now())->toFormattedEnglishBSDate(); // 4 Jestha 2082, Sunday
+NepaliDate::create(\Carbon\Carbon::now())->toFormattedNepaliBSDate(); // ४ जेठ २०८२, आइतवार
 ```
 
 By Using Helper Function.
 
 ```php
-use Pratiksh\Nepalidate\Facades\NepaliDate;
 
-toBS(\Carbon\Carbon::now()); // 2078-4-21
-toFormattedBSDate(\Carbon\Carbon::now()); // 21 Shrawan 2078, Thurday
-toFormattedNepaliDate(\Carbon\Carbon::now()); // २१ साउन २०७८, बिहिवार
+toBS(\Carbon\Carbon::now()); // 2082-02-04
+toFormattedEnglishBSDate(\Carbon\Carbon::now()); // 4 Jestha 2082, Sunday
+toFormattedNepaliBSDate(\Carbon\Carbon::now()); // ४ जेठ २०८२, आइतवार
+toDetailBS(\Carbon\Carbon::now()); // {
+    "year": 2082,
+    "month": "02",
+    "day": "04",
+    "dayOfWeek": 1,
+  }
+
 ```
 
-Mode Controlled Nepali Date Helper
-
-for this to work publish config file
-
+### BS to AD
 ```php
-php artisan vendor:publish --provider="Pratiksh\Nepalidate\Providers\NepalidateServiceProvider"
+use Pratiksh\Nepalidate\Services\EnglishDate;
+EnglishDate::create("2082-02-04")->toAD(); //2025-05-18
+EnglishDate::create("2082-02-04")->toAD('Y-m-d g:i A'); // 2025-05-18 12:00 AM
+EnglishDate::create("2082-02-04")->toCarbon(); // To Carbon instance
+EnglishDate::create("2082-02-04")->date; // Carbon instance
 ```
-
-then in config
-
+By Using Helper Functions
 ```php
-<?php
-
-return [
-    /*
-    |--------------------------------------------------------------------------
-    | Nepali Date Return Mode
-    |--------------------------------------------------------------------------
-    | 1 = toBS
-    | 2 = toFormattedBSDate
-    | 3 = toFormattedBSDate
-    |
-    */
-    'mode' => 1
-];
+toAD("2082-02-04"); // Carbon instance
 ```
 
-```php
-// OUTPUT
-// if mode = 1 then output 2078-4-21
-// if mode = 2 then output 21 Shrawan 2078, Thurday
-// if mode = 3 then output २१ साउन २०७८, बिहिवार
-nepalidate(\Carbon\Carbon::now());
-```
+### Upgrade Guide
+This new version include major updates that could break the code.
+ - `toFormattedBSDate(Carbon $date)` changed to `toFormattedEnglishBSDate(Carbon $date)`
+ - `toFormattedNepaliDate(Carbon $date)` changed to `toFormattedNepaliBSDate(Carbon $date)`
+ - Facades are removed.
 
 ### Testing
 
 ```bash
-composer test
+./vendor/bin/pest
 ```
 
 ### Changelog

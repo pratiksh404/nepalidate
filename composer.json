@@ -28,7 +28,7 @@
             "Pratiksh\\Nepalidate\\": "src"
         },
          "files": [
-          "src/Helpers/NepaliDateHelper.php"
+          "src/Helpers/helper.php"
         ]
     },
     "autoload-dev": {
