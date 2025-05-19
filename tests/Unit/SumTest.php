@@ -1,4 +1,5 @@
 <?php
+
 test('sum', function () {
     $result = 1 + 2;
 

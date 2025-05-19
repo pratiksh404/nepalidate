@@ -3,7 +3,6 @@
 namespace Pratiksh\Nepalidate\Services;
 
 use Carbon\Carbon;
-use Pratiksh\Nepalidate\Services\DateConverter;
 
 class EnglishDate extends DateConverter
 {
@@ -58,7 +57,7 @@ class EnglishDate extends DateConverter
     }
 
     /**
-     * Convert Nepali (BS) date to English (AD) date
+     * Convert Nepali (BS) date to English (AD) date.
      */
     protected function conversion()
     {

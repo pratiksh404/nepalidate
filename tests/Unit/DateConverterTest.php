@@ -64,16 +64,16 @@ test('date converter validates english date range correctly', function () {
     $converter = new DateConverterTestDouble();
 
     // Valid dates should pass without exceptions
-    expect(fn() => $converter->isInRangeEng(1944, 1, 1))->not->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2033, 12, 31))->not->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(1944, 1, 1))->not->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2033, 12, 31))->not->toThrow(\Exception::class);
 
     // Invalid dates should throw exceptions
-    expect(fn() => $converter->isInRangeEng(1943, 12, 31))->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2034, 1, 1))->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2000, 0, 15))->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2000, 13, 15))->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2000, 6, 0))->toThrow(\Exception::class);
-    expect(fn() => $converter->isInRangeEng(2000, 6, 32))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(1943, 12, 31))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2034, 1, 1))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2000, 0, 15))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2000, 13, 15))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2000, 6, 0))->toThrow(\Exception::class);
+    expect(fn () => $converter->isInRangeEng(2000, 6, 32))->toThrow(\Exception::class);
 });
 
 test('date converter validates nepali date range correctly', function () {
