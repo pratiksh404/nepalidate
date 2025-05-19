@@ -4,7 +4,6 @@ use Carbon\Carbon;
 use Pratiksh\Nepalidate\Services\EnglishDate;
 use Pratiksh\Nepalidate\Services\NepaliDate;
 
-
 if (! function_exists('toFormattedBSDate')) {
     function toFormattedBSDate(Carbon $date)
     {

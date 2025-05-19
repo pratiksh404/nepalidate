@@ -3,7 +3,6 @@
 namespace Pratiksh\Nepalidate\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Pratiksh\Nepalidate\Services\NepaliDate;
 
 class NepalidateServiceProvider extends ServiceProvider
 {
@@ -27,7 +26,7 @@ class NepalidateServiceProvider extends ServiceProvider
 
     protected function loadHelpers()
     {
-        foreach (glob(__DIR__ . '/../Helpers/helpers.php') as $filename) {
+        foreach (glob(__DIR__.'/../Helpers/helpers.php') as $filename) {
             require_once $filename;
         }
     }

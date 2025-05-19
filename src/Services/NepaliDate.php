@@ -3,7 +3,6 @@
 namespace Pratiksh\Nepalidate\Services;
 
 use Carbon\Carbon;
-use Pratiksh\Nepalidate\Services\DateConverter;
 
 class NepaliDate extends DateConverter
 {
@@ -92,10 +91,11 @@ class NepaliDate extends DateConverter
             $total_ad_days--;
         }
     }
+
     // Conversions Outputs
     public function toBS(): string
     {
-        return $this->year . '-' . sprintf('%02d', $this->month) . '-' . sprintf('%02d', $this->day);
+        return $this->year.'-'.sprintf('%02d', $this->month).'-'.sprintf('%02d', $this->day);
     }
 
     public function toBSArray(): array
@@ -104,25 +104,25 @@ class NepaliDate extends DateConverter
             'year' => $this->year,
             'month' => sprintf('%02d', $this->month),
             'day' => sprintf('%02d', $this->day),
-            'dayOfWeek' => $this->dayOfWeek
+            'dayOfWeek' => $this->dayOfWeek,
         ];
     }
 
     public function toFormattedEnglishBSDate()
     {
-        return $this->day . ' ' .
-            $this->getBSMonthInEnglish($this->month) . ' ' .
-            $this->year . ',' .
-            ' ' .
+        return $this->day.' '.
+            $this->getBSMonthInEnglish($this->month).' '.
+            $this->year.','.
+            ' '.
             $this->getDayOfWeekInEnglish($this->dayOfWeek);
     }
 
     public function toFormattedNepaliBSDate()
     {
-        return $this->getNumbersInNepali($this->day) . ' ' .
-            $this->getBSMonthInNepali($this->month) . ' ' .
-            $this->formattedNepaliNumber($this->year) . ',' .
-            ' ' .
+        return $this->getNumbersInNepali($this->day).' '.
+            $this->getBSMonthInNepali($this->month).' '.
+            $this->formattedNepaliNumber($this->year).','.
+            ' '.
             $this->getDayOfWeekInNepali($this->dayOfWeek);
     }
 }
