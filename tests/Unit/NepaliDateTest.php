@@ -18,8 +18,8 @@ test('it can return BS as an array', function () {
 
     expect($bsArray)->toHaveKeys(['year', 'month', 'day', 'dayOfWeek']);
     expect($bsArray['year'])->toBe(2081);
-    expect((int)$bsArray['month'])->toBe(1);
-    expect((int)$bsArray['day'])->toBe(1);
+    expect((int) $bsArray['month'])->toBe(1);
+    expect((int) $bsArray['day'])->toBe(1);
 });
 
 test('it can return formatted English BS date', function () {
