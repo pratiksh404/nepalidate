@@ -5,7 +5,7 @@ namespace Pratiksh\Nepalidate\Services;
 use Carbon\Carbon;
 use Pratiksh\Nepalidate\Services\DateConverter;
 
-class NepaliDate extends DateConverter
+final class NepaliDate extends DateConverter
 {
     public $eng_year;
     public $eng_month;
@@ -18,7 +18,7 @@ class NepaliDate extends DateConverter
         $this->eng_day = $eng_day;
 
         // Conversion
-        $this->convertToBS($eng_year, $eng_month, $eng_day);
+        $this->convertToBS();
     }
 
     public static function create(Carbon $date): NepaliDate
@@ -38,7 +38,7 @@ class NepaliDate extends DateConverter
         $this->conversion();
     }
 
-    public function toCarbon(): Carbon
+    public function toCarbon()
     {
         return Carbon::create($this->year, $this->month, $this->day);
     }

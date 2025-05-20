@@ -1,0 +1,16 @@
+# phpstan.neon
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 5 # You can adjust this from 0 (lowest) to 9 (strictest)
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - vendor
+        - tests
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    checkUnionTypes: true
+    treatPhpDocTypesAsCertain: false

@@ -52,11 +52,11 @@ if (! function_exists('toDetailBS')) {
     {
         $bs_array = NepaliDate::create($date)->toBSArray();
         $to_detail_bs = null;
-        if (! is_null($bs_array)) {
-            if (is_array($bs_array)) {
-                if (count($bs_array) > 0) {
-                    $to_detail_bs = json_decode(json_encode($bs_array));
-                }
+
+        if (!empty($bs_array) && is_array($bs_array)) {
+            $json = json_encode($bs_array);
+            if ($json !== false) {
+                $to_detail_bs = json_decode($json);
             }
         }
 

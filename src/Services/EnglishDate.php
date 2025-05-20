@@ -5,7 +5,7 @@ namespace Pratiksh\Nepalidate\Services;
 use Carbon\Carbon;
 use Pratiksh\Nepalidate\Services\DateConverter;
 
-class EnglishDate extends DateConverter
+final class EnglishDate extends DateConverter
 {
     public $nep_year;
     public $nep_month;
@@ -20,14 +20,14 @@ class EnglishDate extends DateConverter
         $this->nep_day = $nep_day;
 
         // Conversion
-        $this->convertToAD($nep_year, $nep_month, $nep_day);
+        $this->convertToAD();
     }
 
     public static function create(string $date): EnglishDate
     {
         $date = str_replace('/', '-', $date);
         $date = explode('-', $date);
-        if (count($date ?? 0) != 3) {
+        if (count($date) != 3) {
             throw new \Exception('Invalid date format');
         }
 
@@ -38,7 +38,7 @@ class EnglishDate extends DateConverter
     {
         $date = str_replace('/', '-', $date);
         $date = explode('-', $date);
-        if (count($date ?? 0) != 3) {
+        if (count($date) != 3) {
             throw new \Exception('Invalid date format');
         }
 
@@ -52,7 +52,7 @@ class EnglishDate extends DateConverter
         $this->conversion();
     }
 
-    public function toCarbon(): Carbon
+    public function toCarbon()
     {
         return Carbon::create($this->year, $this->month, $this->day);
     }
@@ -112,7 +112,12 @@ class EnglishDate extends DateConverter
 
             $total_bs_days--;
         }
-        $this->date = Carbon::create($this->year, $this->month, $this->day);
+        $date = Carbon::create($this->year, $this->month, $this->day);
+        if ($date != false) {
+            $this->date = $date;
+        } else {
+            throw new \Exception('Invalid date');
+        }
     }
 
     public function toAD($format = 'Y-m-d'): string

@@ -236,7 +236,6 @@ abstract class DateConverter
      * @param int $yy
      * @param int $mm
      * @param int $dd
-     * @return bool
      */
     protected function is_in_range_eng($yy, $mm, $dd)
     {
@@ -259,7 +258,6 @@ abstract class DateConverter
      * @param int $yy
      * @param int $mm
      * @param int $dd
-     * @return bool
      */
     protected function is_in_range_nep($yy, $mm, $dd)
     {
@@ -274,8 +272,6 @@ abstract class DateConverter
         if ($dd < 1 || $dd > 32) {
             return 'Error! day value can be between 1-31 only';
         }
-
-        return TRUE;
     }
 
     /**
