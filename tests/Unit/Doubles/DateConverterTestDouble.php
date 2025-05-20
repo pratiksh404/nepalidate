@@ -7,14 +7,24 @@ use Pratiksh\Nepalidate\Services\DateConverter;
 class DateConverterTestDouble extends DateConverter
 {
     // Expose protected methods for testing
-    public function isInRangeEng($yy, $mm, $dd)
+    public function isInRangeEng($yy, $mm, $dd): bool
     {
-        return $this->is_in_range_eng($yy, $mm, $dd);
+        try {
+            $this->is_in_range_eng($yy, $mm, $dd);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
 
-    public function isInRangeNep($yy, $mm, $dd)
+    public function isInRangeNep($yy, $mm, $dd): bool
     {
-        return $this->is_in_range_nep($yy, $mm, $dd);
+        try {
+            $this->is_in_range_nep($yy, $mm, $dd);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
 
     public function isLeapYear($year)

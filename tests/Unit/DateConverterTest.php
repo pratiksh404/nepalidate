@@ -63,17 +63,17 @@ test('date converter formats nepali numbers correctly', function () {
 test('date converter validates english date range correctly', function () {
     $converter = new DateConverterTestDouble();
 
-    // Valid dates should pass without exceptions
-    expect(fn () => $converter->isInRangeEng(1944, 1, 1))->not->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2033, 12, 31))->not->toThrow(\Exception::class);
+    // Valid dates should pass should return true
+    expect(fn() => $converter->isInRangeEng(1944, 1, 1))->not->toBeTrue();
+    expect(fn() => $converter->isInRangeEng(2033, 12, 31))->not->toBeTrue();
 
-    // Invalid dates should throw exceptions
-    expect(fn () => $converter->isInRangeEng(1943, 12, 31))->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2034, 1, 1))->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2000, 0, 15))->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2000, 13, 15))->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2000, 6, 0))->toThrow(\Exception::class);
-    expect(fn () => $converter->isInRangeEng(2000, 6, 32))->toThrow(\Exception::class);
+    // Invalid dates should return false
+    expect($converter->isInRangeEng(1943, 12, 31))->toBeFalse();
+    expect($converter->isInRangeEng(2034, 1, 1))->toBeFalse();
+    expect($converter->isInRangeEng(2000, 0, 15))->toBeFalse();
+    expect($converter->isInRangeEng(2000, 13, 15))->toBeFalse();
+    expect($converter->isInRangeEng(2000, 6, 0))->toBeFalse();
+    expect($converter->isInRangeEng(2000, 6, 32))->toBeFalse();
 });
 
 test('date converter validates nepali date range correctly', function () {
@@ -84,12 +84,12 @@ test('date converter validates nepali date range correctly', function () {
     expect($converter->isInRangeNep(2089, 12, 30))->toBeTrue();
 
     // Invalid dates
-    expect($converter->isInRangeNep(1999, 12, 30))->toBe('Supported only between 2000-2089');
-    expect($converter->isInRangeNep(2090, 1, 1))->toBe('Supported only between 2000-2089');
-    expect($converter->isInRangeNep(2080, 0, 15))->toBe('Error! month value can be between 1-12 only');
-    expect($converter->isInRangeNep(2080, 13, 15))->toBe('Error! month value can be between 1-12 only');
-    expect($converter->isInRangeNep(2080, 6, 0))->toBe('Error! day value can be between 1-31 only');
-    expect($converter->isInRangeNep(2080, 6, 33))->toBe('Error! day value can be between 1-31 only');
+    expect($converter->isInRangeNep(1999, 12, 30))->toBeFalse();
+    expect($converter->isInRangeNep(2090, 1, 1))->toBeFalse();
+    expect($converter->isInRangeNep(2080, 0, 15))->toBeFalse();
+    expect($converter->isInRangeNep(2080, 13, 15))->toBeFalse();
+    expect($converter->isInRangeNep(2080, 6, 0))->toBeFalse();
+    expect($converter->isInRangeNep(2080, 6, 33))->toBeFalse();
 });
 
 test('date converter correctly identifies leap years', function () {

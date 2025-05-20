@@ -7,14 +7,14 @@ test('it converts BS date string to AD using create()', function () {
     $date = EnglishDate::create('2081-01-01');
 
     expect($date)->toBeInstanceOf(EnglishDate::class);
-    expect($date->toCarbon()->format('Y-m-d'))->toBe('2024-04-14');
+    expect($date->toCarbon()->format('Y-m-d'))->toBe('2024-04-13');
 });
 
 test('it converts BS date string to AD using fromBS()', function () {
     $date = EnglishDate::fromBS('2081/01/01');
 
     expect($date)->toBeInstanceOf(EnglishDate::class);
-    expect($date->toCarbon()->format('Y-m-d'))->toBe('2024-04-14');
+    expect($date->toCarbon()->format('Y-m-d'))->toBe('2024-04-13');
 });
 
 test('it throws exception for invalid date format in create()', function () {
@@ -37,5 +37,5 @@ test('it correctly sets AD Carbon date after conversion', function () {
     $carbon = $englishDate->toCarbon();
 
     expect($carbon)->toBeInstanceOf(Carbon::class);
-    expect($carbon->format('Y-m-d'))->toBe('2024-04-14');
+    expect($carbon->format('Y-m-d'))->toBe('2024-04-13');
 });

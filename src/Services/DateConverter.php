@@ -258,15 +258,15 @@ abstract class DateConverter
     protected function is_in_range_nep($yy, $mm, $dd)
     {
         if ($yy < 2000 || $yy > 2089) {
-            return 'Supported only between 2000-2089';
+            throw new \Exception('Supported only between 2000-2089');
         }
 
         if ($mm < 1 || $mm > 12) {
-            return 'Error! month value can be between 1-12 only';
+            throw new \Exception('Error! month value can be between 1-12 only');
         }
 
         if ($dd < 1 || $dd > 32) {
-            return 'Error! day value can be between 1-31 only';
+            throw new \Exception('Error! day value can be between 1-31 only');
         }
     }
 
