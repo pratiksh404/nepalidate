@@ -64,8 +64,8 @@ test('date converter validates english date range correctly', function () {
     $converter = new DateConverterTestDouble();
 
     // Valid dates should pass should return true
-    expect(fn() => $converter->isInRangeEng(1944, 1, 1))->not->toBeTrue();
-    expect(fn() => $converter->isInRangeEng(2033, 12, 31))->not->toBeTrue();
+    expect(fn () => $converter->isInRangeEng(1944, 1, 1))->not->toBeTrue();
+    expect(fn () => $converter->isInRangeEng(2033, 12, 31))->not->toBeTrue();
 
     // Invalid dates should return false
     expect($converter->isInRangeEng(1943, 12, 31))->toBeFalse();

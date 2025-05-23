@@ -13,7 +13,7 @@ class NepalidateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // 
+        //
     }
 
     /**
