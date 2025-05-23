@@ -11,6 +11,7 @@ class DateConverterTestDouble extends DateConverter
     {
         try {
             $this->is_in_range_eng($yy, $mm, $dd);
+
             return true;
         } catch (\Throwable $th) {
             return false;
@@ -21,6 +22,7 @@ class DateConverterTestDouble extends DateConverter
     {
         try {
             $this->is_in_range_nep($yy, $mm, $dd);
+
             return true;
         } catch (\Throwable $th) {
             return false;

@@ -229,9 +229,9 @@ abstract class DateConverter
     /**
      * Check if date range is in english.
      *
-     * @param int $yy
-     * @param int $mm
-     * @param int $dd
+     * @param  int  $yy
+     * @param  int  $mm
+     * @param  int  $dd
      */
     protected function is_in_range_eng($yy, $mm, $dd)
     {
@@ -251,9 +251,9 @@ abstract class DateConverter
     /**
      * Check if date is with in nepali data range.
      *
-     * @param int $yy
-     * @param int $mm
-     * @param int $dd
+     * @param  int  $yy
+     * @param  int  $mm
+     * @param  int  $dd
      */
     protected function is_in_range_nep($yy, $mm, $dd)
     {
