@@ -10,7 +10,7 @@ Laravel package to convert AD to BS that can work with carbon.
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via composer :
 
 ```bash
 composer require pratiksh/nepalidate
