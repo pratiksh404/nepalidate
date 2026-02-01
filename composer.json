@@ -28,8 +28,8 @@
         "psr-4": {
             "Pratiksh\\Nepalidate\\": "src"
         },
-         "files": [
-          "src/Helpers/helper.php"
+        "files": [
+            "src/Helpers/helper.php"
         ]
     },
     "autoload-dev": {
@@ -40,10 +40,12 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true,
+        "audit": {
+            "block-insecure": false
+        },
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
