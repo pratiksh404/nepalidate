@@ -167,7 +167,7 @@ abstract class DateConverter
         7 => 'शनिवार',
     ];
 
-   private $numbersInNepali = [
+    private $numbersInNepali = [
         0 => '०',
         1 => '१',
         2 => '२',
