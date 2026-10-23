@@ -26,3 +26,12 @@ test('it can return formatted English BS date', function () {
     $date = NepaliDate::create(Carbon::create(2024, 4, 13));
     expect($date->toFormattedEnglishBSDate())->toBe('1 Baisakh 2081, Saturday');
 });
+
+test('it can convert AD to BS date for year 2083', function () {
+    $newYear = Carbon::create(2026, 4, 14);
+    expect(NepaliDate::create($newYear)->toBS())->toBe('2083-01-01');
+
+    $kartik6 = Carbon::create(2026, 10, 23);
+    expect(NepaliDate::create($kartik6)->toBS())->toBe('2083-07-06');
+});
+
